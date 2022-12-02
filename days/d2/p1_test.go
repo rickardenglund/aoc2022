@@ -11,7 +11,7 @@ func TestExample1(t *testing.T) {
 B X
 C Z`
 	d := Day{}
-	require.Equal(t, 15, d.P1(s))
+	require.Equal(t, 16, d.P1(s))
 }
 
 func TestExample2(t *testing.T) {
