@@ -33,8 +33,9 @@ func (d Day) P2(input string) int {
 	lines := strings.Split(input, "\n")
 	score := 0
 	for _, line := range lines {
-		me, opponent := parseRow2(line)
-		score += round(me, opponent)
+		desiredOutcome, opponent := parseRow2(line)
+		myMove := getMove(opponent, desiredOutcome)
+		score += round(myMove, opponent)
 	}
 
 	return score

@@ -23,8 +23,9 @@ C Z`
 }
 
 func TestPlay(t *testing.T) {
-	require.Equal(t, 0, play(paper, scissor))
-	require.Equal(t, 3, play(scissor, scissor))
+	require.Equal(t, loss, play(paper, scissor))
+	require.Equal(t, draw, play(scissor, scissor))
+	require.Equal(t, win, play(rock, scissor))
 }
 
 func TestRound(t *testing.T) {

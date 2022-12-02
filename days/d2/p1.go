@@ -6,68 +6,54 @@ import (
 )
 
 const (
-	rock    = 1
-	paper   = 2
-	scissor = 3
+	rock    move = 1
+	paper   move = 2
+	scissor move = 3
 )
 
-func round(me, other int) int {
-	return me + play(me, other)
+type move int
+
+func round(me, other move) int {
+	return int(me) + int(play(me, other))
 }
 
-func play(me, other int) int {
-	const (
-		loss = 0
-		even = 3
-		win  = 6
-	)
+const (
+	loss outcome = 0
+	draw outcome = 3
+	win  outcome = 6
+)
 
-	switch me {
-	case rock:
-		switch other {
-		case rock:
-			return even
-		case paper:
-			return loss
-		case scissor:
-			return win
-		default:
-			panic(fmt.Sprintf("unknown move %d", other))
-		}
-	case paper:
-		switch other {
-		case rock:
-			return win
-		case paper:
-			return even
-		case scissor:
-			return loss
-		default:
-			panic(fmt.Sprintf("unknown move %d", other))
-		}
-	case scissor:
-		switch other {
-		case rock:
-			return loss
-		case paper:
-			return win
-		case scissor:
-			return even
-		default:
-			panic(fmt.Sprintf("unknown move %d", other))
-		}
-	default:
-		panic(fmt.Sprintf("unknown me move %d", me))
+type outcome int
+
+func play(me, other move) outcome {
+	m := map[move]map[move]outcome{
+		rock: {
+			rock:    draw,
+			paper:   loss,
+			scissor: win,
+		},
+		paper: {
+			rock:    win,
+			paper:   draw,
+			scissor: loss,
+		},
+		scissor: {
+			rock:    loss,
+			paper:   win,
+			scissor: draw,
+		},
 	}
+
+	return m[me][other]
 }
 
-func parseRow(r string) (int, int) {
-	opponentMap := map[string]int{
+func parseRow(r string) (move, move) {
+	opponentMap := map[string]move{
 		"A": rock,
 		"B": paper,
 		"C": scissor,
 	}
-	meMap := map[string]int{
+	meMap := map[string]move{
 		"X": rock,
 		"Y": paper,
 		"Z": scissor,
@@ -77,13 +63,13 @@ func parseRow(r string) (int, int) {
 	return meMap[parts[1]], opponentMap[parts[0]]
 }
 
-func parseRow2(r string) (int, int) {
-	opponentMap := map[string]int{
+func parseRow2(r string) (desiredOutcome, move) {
+	opponentMap := map[string]move{
 		"A": rock,
 		"B": paper,
 		"C": scissor,
 	}
-	outComes := map[string]int{
+	outComes := map[string]desiredOutcome{
 		"X": needLoose,
 		"Y": needDraw,
 		"Z": needWin,
@@ -91,26 +77,29 @@ func parseRow2(r string) (int, int) {
 	parts := strings.Split(r, " ")
 
 	opponentMove := opponentMap[parts[0]]
-	return getMove(opponentMove, outComes[parts[1]]), opponentMove
+	return outComes[parts[1]], opponentMove
 }
 
+type desiredOutcome int
+
 const (
-	needLoose = iota
+	needLoose desiredOutcome = iota
 	needDraw
 	needWin
 )
 
-func getMove(opponent int, outcome int) int {
-	looseMap := map[int]int{
+func getMove(opponent move, outcome desiredOutcome) move {
+	looseMap := map[move]move{
 		rock:    scissor,
 		paper:   rock,
 		scissor: paper,
 	}
-	winMap := map[int]int{
+	winMap := map[move]move{
 		rock:    paper,
 		paper:   scissor,
 		scissor: rock,
 	}
+
 	switch outcome {
 	case needLoose:
 		return looseMap[opponent]
