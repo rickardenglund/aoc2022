@@ -1,22 +1,13 @@
-package main
+package d1
 
 import (
 	_ "embed"
-	"fmt"
 	"sort"
 	"strconv"
 	"strings"
 
 	"aoc/slices"
 )
-
-//go:embed input.txt
-var puzzleInput string
-
-func main() {
-	fmt.Printf("p1: %d\n", p1(puzzleInput))
-	fmt.Printf("p2: %d\n", p2(puzzleInput))
-}
 
 func p1(input string) int {
 	elfCalories := getCalories(input)
