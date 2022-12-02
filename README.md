@@ -1,1 +1,1 @@
-![build workflow](https://github.com/github/docs/actions/workflows/build.yml/badge.svg)
+![build workflow](https://github.com/rickardenglund/aoc2022/actions/workflows/build.yml/badge.svg)
