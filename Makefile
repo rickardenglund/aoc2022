@@ -1,2 +1,8 @@
-results.md:cmd/main.go
+.PHONY: run
+run:
+	go run cmd/main.go
+
+go_files =$(shell find . -name '*.go')
+results.md:$(go_files)
+	echo $(go_files)
 	go run cmd/main.go > $@
