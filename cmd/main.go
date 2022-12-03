@@ -8,11 +8,12 @@ import (
 
 	"aoc/days/d1"
 	"aoc/days/d2"
+	"aoc/days/d3"
 	"aoc/days/sample"
 )
 
 func main() {
-	days := []Day{sample.New(), d1.New(), d2.New()}
+	days := []Day{sample.New(), d1.New(), d2.New(), d3.New()}
 
 	for _, d := range days {
 		name := reflect.TypeOf(d).PkgPath()

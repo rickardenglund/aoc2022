@@ -31,6 +31,7 @@ func (d Day) P1(input string) int {
 
 func (d Day) P2(input string) int {
 	lines := strings.Split(input, "\n")
+
 	score := 0
 	for _, line := range lines {
 		desiredOutcome, opponent := parseRow2(line)
