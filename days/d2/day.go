@@ -41,3 +41,11 @@ func (d Day) P2(input string) int {
 
 	return score
 }
+
+func (d Day) GetAnswer1() int {
+	return 11906
+}
+
+func (d Day) GetAnswer2() int {
+	return 11186
+}

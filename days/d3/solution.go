@@ -10,16 +10,43 @@ import (
 func p1(input string) int {
 	sum := 0
 	for _, l := range strings.Split(input, "\n") {
+		if l == "" {
+			continue
+		}
 		compartment1 := l[:len(l)/2]
 		compartment2 := l[len(l)/2:]
 
-		doubles := inBoth([]rune(compartment1), []rune(compartment2))
-		for _, l := range doubles {
-			sum += getPrio(l)
-		}
+		l := inAll([]string{compartment1, compartment2})
+		sum += getPrio(l)
 	}
 
 	return sum
+}
+
+func p2(input string) int {
+	sum := 0
+	lines := strings.Split(input, "\n")
+	for i := 0; i+3 <= len(lines); i += 3 {
+		badge := inAll(lines[i : i+3])
+		sum += getPrio(badge)
+	}
+
+	return sum
+}
+
+func inAll(lists []string) rune {
+	for _, l := range lists[0] {
+		all := true
+		for i := 1; i < len(lists); i++ {
+			all = all && slices.Contains([]rune(lists[i]), l)
+		}
+
+		if all {
+			return l
+		}
+	}
+
+	panic("nothing found in all lists")
 }
 
 func getPrio(l rune) int {
@@ -29,43 +56,4 @@ func getPrio(l rune) int {
 
 	// lowercase
 	return int(l) - 'a' + 1
-}
-
-func inBoth(compartment1 []rune, compartment2 []rune) []rune {
-	doubles := map[rune]bool{}
-	for _, l := range compartment1 {
-		if slices.Contains(compartment2, l) {
-			doubles[l] = true
-		}
-	}
-
-	doubleList := []rune{}
-	for l := range doubles {
-		doubleList = append(doubleList, l)
-	}
-
-	return doubleList
-}
-
-func p2(input string) int {
-	sum := 0
-	lines := strings.Split(input, "\n")
-	for i := 0; i+3 <= len(lines); i += 3 {
-		badge := findBadge(lines[i : i+3])
-		sum += getPrio(badge)
-	}
-
-	return sum
-}
-
-func findBadge(backpacks []string) rune {
-	for _, r := range backpacks[0] {
-		if slices.Contains([]rune(backpacks[1]), r) &&
-			slices.Contains([]rune(backpacks[2]), r) {
-			return r
-
-		}
-	}
-
-	panic("did not find badge")
 }

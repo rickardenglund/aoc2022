@@ -24,3 +24,11 @@ func (d Day) P1(input string) int {
 func (d Day) P2(input string) int {
 	return p2(input)
 }
+
+func (d Day) GetAnswer1() int {
+	return 7863
+}
+
+func (d Day) GetAnswer2() int {
+	return 2488
+}

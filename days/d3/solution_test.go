@@ -18,8 +18,9 @@ func TestDay_P1(t *testing.T) {
 	require.Equal(t, 157, p1(testinput))
 }
 
-func TestDay_P2(t *testing.T) {
-	require.Equal(t, 70, p2(testinput))
+func TestDay_P1Real(t *testing.T) {
+	d := Day{}
+	require.Equal(t, d.GetAnswer1(), p1(d.GetInput()))
 }
 
 func TestGetPrio(t *testing.T) {
@@ -34,5 +35,10 @@ PvHPbsvZlMtbbvbCLLMHtHZZjtgJRjSnJSpSpjRgRjggSRmn
 VLHbCbVPLZvlvMhHCHlPHbLCqQQfdQTBddTWhDTBchQzQwBW`
 	lines := strings.Split(bs, "\n")
 
-	require.Equal(t, 'P', findBadge(lines))
+	require.Equal(t, 'P', inAll(lines))
+}
+
+func Test_inAll(t *testing.T) {
+	require.Equal(t, 'j', inAll([]string{"hej", "aj"}))
+	require.Panics(t, func() { inAll([]string{"hej", "ai"}) })
 }
