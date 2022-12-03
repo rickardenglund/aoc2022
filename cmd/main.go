@@ -65,6 +65,5 @@ type Day interface {
 	P2(string) int
 	GetInput() string
 	GetAnswer1() int
-
 	GetAnswer2() int
 }
