@@ -4,3 +4,8 @@
 ``` bash
 go run cmd/main.go
 ```
+
+
+
+## Results
+[results](./results.md) can be viewed here

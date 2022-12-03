@@ -2,7 +2,6 @@ package d3
 
 import (
 	_ "embed"
-	"fmt"
 	"strings"
 
 	"aoc/slices"
@@ -68,7 +67,6 @@ func p2(input string) int {
 	for i := 0; i+3 <= len(lines); i += 3 {
 		badge := findBadge(lines[i : i+3])
 		sum += getPrio(badge)
-		fmt.Printf("%c - %d\n", badge, getPrio(badge))
 	}
 
 	return sum

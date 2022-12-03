@@ -15,14 +15,15 @@ import (
 func main() {
 	days := []Day{sample.New(), d1.New(), d2.New(), d3.New()}
 
+	fmt.Printf("# Results\n")
 	for _, d := range days {
 		name := reflect.TypeOf(d).PkgPath()
-		fmt.Printf("%s:\n", name)
+		fmt.Printf("# %s:\n", name)
 
 		start := time.Now()
-		fmt.Printf("p1: %d - %v\n", d.P1(d.GetInput()), time.Since(start))
+		fmt.Printf("* p1: %d - %v\n", d.P1(d.GetInput()), time.Since(start))
 		start = time.Now()
-		fmt.Printf("p2: %d - %v\n", d.P2(d.GetInput()), time.Since(start))
+		fmt.Printf("* p2: %d - %v\n", d.P2(d.GetInput()), time.Since(start))
 		fmt.Printf("\n")
 	}
 }
