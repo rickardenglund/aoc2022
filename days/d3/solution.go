@@ -32,33 +32,19 @@ func getPrio(l rune) int {
 }
 
 func inBoth(compartment1 []rune, compartment2 []rune) []rune {
-	m := map[rune]bool{}
+	doubles := map[rune]bool{}
 	for _, l := range compartment1 {
-		m[l] = true
-	}
-
-	doubles := []rune{}
-	for _, l := range compartment2 {
-		if m[l] {
-			doubles = append(doubles, l)
+		if slices.Contains(compartment2, l) {
+			doubles[l] = true
 		}
 	}
 
-	return toUnique(doubles)
-}
-
-func toUnique(doubles []rune) []rune {
-	m := map[rune]bool{}
-	res := []rune{}
-	for _, r := range doubles {
-		m[r] = true
+	doubleList := []rune{}
+	for l := range doubles {
+		doubleList = append(doubleList, l)
 	}
 
-	for r := range m {
-		res = append(res, r)
-	}
-
-	return res
+	return doubleList
 }
 
 func p2(input string) int {
