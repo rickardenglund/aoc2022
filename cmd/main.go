@@ -13,12 +13,13 @@ import (
 	"aoc/days/d1"
 	"aoc/days/d2"
 	"aoc/days/d3"
+	"aoc/days/d4"
 )
 
 func main() {
-	days := []Day{d1.New(), d2.New(), d3.New()}
+	days := []Day{d1.New(), d2.New(), d3.New(), d4.New()}
 
-	fmt.Printf("# Results\n")
+	fmt.Printf("## Results\n")
 
 	tw := tablewriter.NewWriter(os.Stdout)
 	tw.SetHeader([]string{"day", "p1 result", "p2 result", "p1 time", "p2 time"})
