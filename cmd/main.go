@@ -59,7 +59,7 @@ func toStatus(got, expected string) string {
 		return "success"
 	}
 
-	return fmt.Sprintf("expected %d got %d", expected, got)
+	return fmt.Sprintf("expected %s got %s", expected, got)
 }
 
 type Day interface {
