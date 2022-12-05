@@ -23,10 +23,8 @@ func p2(input string) string {
 
 	for _, m := range moves {
 		state.move9001(m)
-		fmt.Printf("n: %d\n", state.count())
 	}
 
-	state.print()
 	return state.tops()
 }
 

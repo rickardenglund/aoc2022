@@ -29,5 +29,5 @@ func Test_p2(t *testing.T) {
 }
 
 func Test_p2Real(t *testing.T) {
-	require.Equal(t, "MCD", p2(puzzleInput))
+	require.Equal(t, "LVMRWSSPZ", p2(puzzleInput))
 }
