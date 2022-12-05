@@ -20,7 +20,7 @@ func TestDay_P1(t *testing.T) {
 
 func TestDay_P1Real(t *testing.T) {
 	d := Day{}
-	require.Equal(t, d.GetAnswer1(), p1(d.GetInput()))
+	require.Equal(t, d.GetAnswer1(), d.P1(d.GetInput()))
 }
 
 func TestGetPrio(t *testing.T) {

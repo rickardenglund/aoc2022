@@ -20,7 +20,7 @@ func Test_p1(t *testing.T) {
 
 func Test_p1Real(t *testing.T) {
 	d := Day{}
-	require.Equal(t, 556, d.P1(d.GetInput()))
+	require.Equal(t, "556", d.P1(d.GetInput()))
 
 }
 
@@ -30,6 +30,6 @@ func Test_p2(t *testing.T) {
 
 func Test_p2Real(t *testing.T) {
 	d := Day{}
-	require.Equal(t, 876, d.P2(d.GetInput()))
+	require.Equal(t, "876", d.P2(d.GetInput()))
 
 }
