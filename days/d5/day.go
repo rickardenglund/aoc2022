@@ -1,8 +1,7 @@
-package d3
+package d5
 
 import (
 	_ "embed"
-	"fmt"
 )
 
 //go:embed input.txt
@@ -19,17 +18,17 @@ func (d Day) GetInput() string {
 }
 
 func (d Day) P1(input string) string {
-	return fmt.Sprintf("%d", p1(input))
+	return p1(input)
 }
 
 func (d Day) P2(input string) string {
-	return fmt.Sprintf("%d", p2(input))
+	return p2(input)
 }
 
 func (d Day) GetAnswer1() string {
-	return "7863"
+	return "JCMHLVGMG"
 }
 
 func (d Day) GetAnswer2() string {
-	return "2488"
+	return "LVMRWSSPZ"
 }

@@ -2,6 +2,7 @@ package d2
 
 import (
 	_ "embed"
+	"fmt"
 	"strings"
 )
 
@@ -18,7 +19,7 @@ func (d Day) GetInput() string {
 	return puzzleInput
 }
 
-func (d Day) P1(input string) int {
+func (d Day) P1(input string) string {
 	lines := strings.Split(input, "\n")
 	score := 0
 	for _, line := range lines {
@@ -26,10 +27,10 @@ func (d Day) P1(input string) int {
 		score += round(me, opponent)
 	}
 
-	return score
+	return fmt.Sprintf("%d", score)
 }
 
-func (d Day) P2(input string) int {
+func (d Day) P2(input string) string {
 	lines := strings.Split(input, "\n")
 
 	score := 0
@@ -39,13 +40,13 @@ func (d Day) P2(input string) int {
 		score += round(myMove, opponent)
 	}
 
-	return score
+	return fmt.Sprintf("%d", score)
 }
 
-func (d Day) GetAnswer1() int {
-	return 11906
+func (d Day) GetAnswer1() string {
+	return "11906"
 }
 
-func (d Day) GetAnswer2() int {
-	return 11186
+func (d Day) GetAnswer2() string {
+	return "11186"
 }

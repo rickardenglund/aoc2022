@@ -14,10 +14,11 @@ import (
 	"aoc/days/d2"
 	"aoc/days/d3"
 	"aoc/days/d4"
+	"aoc/days/d5"
 )
 
 func main() {
-	days := []Day{d1.New(), d2.New(), d3.New(), d4.New()}
+	days := []Day{d1.New(), d2.New(), d3.New(), d4.New(), d5.New()}
 
 	fmt.Printf("## Results\n")
 
@@ -43,7 +44,7 @@ func main() {
 	tw.Render()
 }
 
-func toRow(name string, p1Res, p1Expected int, p1Duration time.Duration, p2Res, p2Expected int, p2Dur time.Duration) []string {
+func toRow(name, p1Res, p1Expected string, p1Duration time.Duration, p2Res string, p2Expected string, p2Dur time.Duration) []string {
 	return []string{
 		strings.TrimPrefix(name, "aoc/days/"),
 		fmt.Sprintf("%v", toStatus(p1Res, p1Expected)),
@@ -53,7 +54,7 @@ func toRow(name string, p1Res, p1Expected int, p1Duration time.Duration, p2Res, 
 	}
 }
 
-func toStatus(got int, expected int) string {
+func toStatus(got, expected string) string {
 	if got == expected {
 		return "success"
 	}
@@ -62,9 +63,9 @@ func toStatus(got int, expected int) string {
 }
 
 type Day interface {
-	P1(string) int
-	P2(string) int
+	P1(string) string
+	P2(string) string
 	GetInput() string
-	GetAnswer1() int
-	GetAnswer2() int
+	GetAnswer1() string
+	GetAnswer2() string
 }

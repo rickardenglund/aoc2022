@@ -2,6 +2,7 @@ package d1
 
 import (
 	_ "embed"
+	"fmt"
 )
 
 //go:embed input.txt
@@ -17,18 +18,18 @@ func (d Day) GetInput() string {
 	return puzzleInput
 }
 
-func (d Day) P1(input string) int {
-	return p1(input)
+func (d Day) P1(input string) string {
+	return fmt.Sprintf("%d", p1(input))
 }
 
-func (d Day) P2(input string) int {
-	return p2(input)
+func (d Day) P2(input string) string {
+	return fmt.Sprintf("%d", p2(input))
 }
 
-func (d Day) GetAnswer1() int {
-	return 70509
+func (d Day) GetAnswer1() string {
+	return "70509"
 }
 
-func (d Day) GetAnswer2() int {
-	return 208567
+func (d Day) GetAnswer2() string {
+	return "208567"
 }
