@@ -15,10 +15,11 @@ import (
 	"aoc/days/d3"
 	"aoc/days/d4"
 	"aoc/days/d5"
+	"aoc/days/d9"
 )
 
 func main() {
-	days := []Day{d1.New(), d2.New(), d3.New(), d4.New(), d5.New()}
+	days := []Day{d1.New(), d2.New(), d3.New(), d4.New(), d5.New(), d9.New()}
 
 	fmt.Printf("## Results\n")
 
