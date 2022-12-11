@@ -11,6 +11,8 @@ import (
 	"github.com/olekukonko/tablewriter"
 
 	"aoc/days/d1"
+	"aoc/days/d10"
+	"aoc/days/d11"
 	"aoc/days/d2"
 	"aoc/days/d3"
 	"aoc/days/d4"
@@ -22,7 +24,7 @@ import (
 )
 
 func main() {
-	days := []Day{d1.New(), d2.New(), d3.New(), d4.New(), d5.New(), d6.New(), d7.New(), d8.New(), d9.New()}
+	days := []Day{d1.New(), d2.New(), d3.New(), d4.New(), d5.New(), d6.New(), d7.New(), d8.New(), d9.New(), d10.New(), d11.New()}
 
 	fmt.Printf("## Results\n")
 

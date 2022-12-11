@@ -1,4 +1,4 @@
-package sample
+package d10
 
 import (
 	_ "embed"
