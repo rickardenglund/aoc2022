@@ -18,7 +18,6 @@ func (d *device) cmdExecuted(cmd string, output []string) {
 		d.cd(parts[1])
 	case "ls":
 		d.ls(output)
-
 	}
 }
 
@@ -41,8 +40,8 @@ func (d *device) ls(outputs []string) {
 			d.cwd.content = append(d.cwd.content, &newFile)
 		}
 	}
-
 }
+
 func (d *device) cd(name string) {
 	switch name {
 	case "/":

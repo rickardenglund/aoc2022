@@ -23,3 +23,12 @@ func Int(input string) int {
 
 	return n
 }
+
+func IntList(input string) []int {
+	ints := []int{}
+	for _, s := range strings.Split(input, ", ") {
+		ints = append(ints, Int(s))
+	}
+
+	return ints
+}
