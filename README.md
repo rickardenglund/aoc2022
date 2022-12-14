@@ -8,16 +8,16 @@ make run
 ## Results
 | DAY | P1 RESULT |                P2 RESULT                 |  P1 TIME   |   P2 TIME   |
 |-----|-----------|------------------------------------------|------------|-------------|
-| d1  | success   | success                                  | 99.383µs   | 71.461µs    |
-| d2  | success   | success                                  | 2.12029ms  | 2.390065ms  |
-| d3  | success   | success                                  | 119.528µs  | 968.92µs    |
-| d4  | success   | success                                  | 356.346µs  | 331.189µs   |
-| d5  | success   | success                                  | 261.441µs  | 244.786µs   |
-| d6  | success   | success                                  | 104.778µs  | 938.848µs   |
-| d7  | success   | success                                  | 217.998µs  | 203.751µs   |
-| d8  | success   | success                                  | 545.615µs  | 5.209008ms  |
-| d9  | success   | success                                  | 1.011281ms | 1.306006ms  |
-| d10 | success   | expected 2 got                           | 20.723µs   | 34.581µs    |
+| d1  | success   | success                                  | 103.04µs   | 70.768µs    |
+| d2  | success   | success                                  | 2.21497ms  | 2.504991ms  |
+| d3  | success   | success                                  | 688.824µs  | 221.052µs   |
+| d4  | success   | success                                  | 263.475µs  | 251.196µs   |
+| d5  | success   | success                                  | 256.75µs   | 234.273µs   |
+| d6  | success   | success                                  | 103.212µs  | 932.41µs    |
+| d7  | success   | success                                  | 220.95µs   | 207.113µs   |
+| d8  | success   | success                                  | 542.513µs  | 5.396535ms  |
+| d9  | success   | success                                  | 1.381994ms | 1.303719ms  |
+| d10 | success   | expected 2 got                           | 22.4µs     | 36.176µs    |
 |     |           | ###..###..###...##..###...##...##..####. |            |             |
 |     |           | #..#.#..#.#..#.#..#.#..#.#..#.#..#.#.... |            |             |
 |     |           | #..#.###..#..#.#..#.#..#.#..#.#....###.. |            |             |
@@ -25,4 +25,5 @@ make run
 |     |           | #.#..#..#.#....#..#.#.#..#..#.#..#.#.... |            |             |
 |     |           | #..#.###..#....#..#.#..#.#..#..###.#.... |            |             |
 |     |           | ........................................ |            |             |
-| d11 | success   | success                                  | 283.697µs  | 33.566163ms |
+| d11 | success   | success                                  | 283.037µs  | 31.136644ms |
+| d12 | success   | success                                  | 7.811543ms | 286.13719ms |
